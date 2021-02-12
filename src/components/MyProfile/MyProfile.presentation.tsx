@@ -97,8 +97,6 @@ export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
       >
         <div className={styles.profile} ref={imageRef}>
           <Image
-            // src="https://pixabay.com/get/g02f618de774aaf7ff1b61cc3bde00781b82f1774a8b88c9380b0de2caf20a896fc508e49b3ef82734558ed3a7fe1e553.jpg"
-            // src="./../../assets/images/profile.jpeg"
             src="/main-profile.jpeg"
             alt="my-profile"
             width="1000"

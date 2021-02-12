@@ -17,8 +17,8 @@ export const CardPresentation: React.FC<CardPresentationProps> = ({
         <div className={styles.cardHeader}>
           <Image
             src={thumbnail}
-            width="300"
-            height="300"
+            width="1000"
+            height="1000"
             className={styles.thumbnail}
           />
         </div>
