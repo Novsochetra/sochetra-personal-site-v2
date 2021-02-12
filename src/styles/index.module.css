@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100vh;
+  background: radial-gradient(
+    circle at -4% -12.9%,
+    rgb(74, 98, 110) 0.3%,
+    rgb(30, 33, 48) 90.2%
+  );
+  /* padding: 8px; */
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  padding: 5rem 0;
+  flex-direction: column;
+  padding-right: 16px;
+  overflow-y: scroll;
+}
+
+.leftSidebar {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main > .postWrapper {
+  padding: 8px;
+  overflow: hidden;
+}

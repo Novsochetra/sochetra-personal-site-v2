@@ -1,0 +1,68 @@
+.cardWrapper {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--purple800);
+  height: 150px;
+  width: 100%;
+  border-radius: 12px;
+  color: #ffffff;
+  margin: 16px 0px;
+}
+
+.cardWrapper:hover {
+  border: 1px solid var(--purple800);
+  border-color: var(--purple700);
+  box-shadow: 0px 0px 13px -5px rgba(115, 115, 115, 0.75);
+  -webkit-box-shadow: 0px 0px 13px -5px rgba(115, 115, 115, 0.75);
+  -moz-box-shadow: 0px 0px 13px -5px rgba(115, 115, 115, 0.75);
+  transition: all 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cardWrapper:hover .cardHeader .thumbnail {
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
+.cardHeader {
+  display: flex;
+  width: 250px;
+  height: 150px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cardHeader .thumbnail {
+  position: relative;
+  width: 250px;
+  border-radius: 12px;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.cardContent {
+  padding: 8px 12px;
+  display: flex;
+  flex: 1;
+  /* background-color: green; */
+  flex-direction: column;
+}
+
+.cardContent > p {
+  margin: 0;
+}
+
+.cardContent > .title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.cardContent > .description {
+  font-size: 16px;
+  flex: 1;
+}
+
+.cardContent > .publishedAt {
+  font-size: 12px;
+}
