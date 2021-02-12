@@ -3,6 +3,7 @@ import { ProfileFavorite } from "../ProfileFavorite";
 import Image from "next/image";
 import { MyProfilePresentationProps } from "./MyProfile.interfaces";
 import styles from "./MyProfile.module.css";
+import Link from "next/link";
 
 export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
   isOpenProfile,
@@ -29,37 +30,53 @@ export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
       onMouseEnter={() => {}}
       onMouseLeave={() => {}}
     >
-      <div className={styles.profileFavoriteItem} ref={favoriteItem1}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="Blog" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem1}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="Blog" />
+        </a>
+      </Link>
 
-      <div className={styles.profileFavoriteItem} ref={favoriteItem2}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="Skill" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem2}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="Skill" />
+        </a>
+      </Link>
 
-      <div className={styles.profileFavoriteItem} ref={favoriteItem3}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="Favorite" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem3}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="Favorite" />
+        </a>
+      </Link>
 
-      <div className={styles.profileFavoriteItem} ref={favoriteItem4}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="Book" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem4}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="Book" />
+        </a>
+      </Link>
 
-      <div className={styles.profileFavoriteItem} ref={favoriteItem5}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="Achievement" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem5}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="Achievement" />
+        </a>
+      </Link>
 
-      <div className={styles.profileFavoriteItem} ref={favoriteItem6}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="CV" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem6}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="CV" />
+        </a>
+      </Link>
 
-      <div className={styles.profileFavoriteItem} ref={favoriteItem7}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="Biography" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem7}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="Biography" />
+        </a>
+      </Link>
 
-      <div className={styles.profileFavoriteItem} ref={favoriteItem8}>
-        <ProfileFavorite color="rgb(108, 139, 155)" label="Contact" />
-      </div>
+      <Link href="/blog">
+        <a className={styles.profileFavoriteItem} ref={favoriteItem8}>
+          <ProfileFavorite color="rgb(108, 139, 155)" label="Contact" />
+        </a>
+      </Link>
 
       <div className={styles.profileIntro} ref={profileIntroRef}>
         <p>I am sochetra</p>

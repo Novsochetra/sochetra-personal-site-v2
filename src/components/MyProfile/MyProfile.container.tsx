@@ -7,14 +7,14 @@ export const MyProfile: React.FC<MyProfileProps> = () => {
   const [isOpenProfile, setIsOpenProfile] = useState(false);
   const profileWrapperRef = useRef<HTMLDivElement>();
   const imageRef = useRef<any>();
-  const favoriteItem1 = useRef<HTMLDivElement>();
-  const favoriteItem2 = useRef<HTMLDivElement>();
-  const favoriteItem3 = useRef<HTMLDivElement>();
-  const favoriteItem4 = useRef<HTMLDivElement>();
-  const favoriteItem5 = useRef<HTMLDivElement>();
-  const favoriteItem6 = useRef<HTMLDivElement>();
-  const favoriteItem7 = useRef<HTMLDivElement>();
-  const favoriteItem8 = useRef<HTMLDivElement>();
+  const favoriteItem1 = useRef<HTMLAnchorElement>();
+  const favoriteItem2 = useRef<HTMLAnchorElement>();
+  const favoriteItem3 = useRef<HTMLAnchorElement>();
+  const favoriteItem4 = useRef<HTMLAnchorElement>();
+  const favoriteItem5 = useRef<HTMLAnchorElement>();
+  const favoriteItem6 = useRef<HTMLAnchorElement>();
+  const favoriteItem7 = useRef<HTMLAnchorElement>();
+  const favoriteItem8 = useRef<HTMLAnchorElement>();
   const profileIntroRef = useRef<HTMLDivElement>();
 
   React.useEffect(() => {
