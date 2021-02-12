@@ -36,7 +36,7 @@
   width: 300px;
   height: 250px;
   border-radius: 12px;
-  background-color: purple;
+  background-color: rgb(108, 139, 155);
   overflow: hidden;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .cardContent {
-  padding: 8px 12px;
+  padding: 12px 12px;
   display: flex;
   flex: 1;
   min-width: 300px;
@@ -71,7 +71,8 @@
 
 .cardContent > .description {
   font-size: 16px;
-  margin: 8px 0px;
+  margin-top: 8px;
+  margin-bottom: 16px;
   flex: 1;
 }
 
@@ -90,6 +91,18 @@
     max-width: 300px;
     height: 250px;
     border-radius: 12px;
-    background-color: purple;
+    background-color: rgb(108, 139, 155);
+    animation: fadeOut 2s;
+    /* transition: opacity 5s cubic-bezier(0.075, 0.82, 0.165, 1); */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

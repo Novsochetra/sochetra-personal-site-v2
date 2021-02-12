@@ -19,3 +19,40 @@
   overflow-y: scroll;
   padding: 16px;
 }
+
+.postWrapper > div {
+  animation: FadeSlideUp 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: both;
+}
+
+.postWrapper > :nth-child(1) {
+  animation-delay: 0.25s;
+}
+
+.postWrapper > :nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.postWrapper > :nth-child(3) {
+  animation-delay: 0.75s;
+}
+
+.postWrapper > :nth-child(4) {
+  animation-delay: 1s;
+}
+
+.postWrapper > :nth-child(5) {
+  animation-delay: 1.25s;
+}
+
+@keyframes FadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
