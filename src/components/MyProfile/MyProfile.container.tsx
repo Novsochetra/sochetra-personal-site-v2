@@ -9,7 +9,7 @@ export const MyProfile: React.FC<MyProfileProps> = () => {
   const profileWrapperRef = useRef<HTMLDivElement>();
   const imageRef = useRef<any>();
   const favoriteItem1 = useRef<HTMLDivElement>();
-  const favoriteItem2 = useRef<HTMLAnchorElement>();
+  const favoriteItem2 = useRef<HTMLDivElement>();
   const favoriteItem3 = useRef<HTMLAnchorElement>();
   const favoriteItem4 = useRef<HTMLAnchorElement>();
   const favoriteItem5 = useRef<HTMLAnchorElement>();
@@ -140,7 +140,7 @@ export const MyProfile: React.FC<MyProfileProps> = () => {
     }
   };
 
-  const onItemPress = () => {
+  const onItemPress = (routeName: string) => {
     favoriteItem1.current.style.transform = `translate(0px, 0px)`;
     favoriteItem1.current.style.transition = `all 0.25s 1s`;
     favoriteItem1.current.style.opacity = `0`;
@@ -193,7 +193,7 @@ export const MyProfile: React.FC<MyProfileProps> = () => {
     imageRef.current.style.opacity = `0`;
 
     timeout = setTimeout(() => {
-      Router.push("/blog");
+      Router.push(routeName);
     }, 4000);
   };
 

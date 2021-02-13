@@ -34,16 +34,18 @@ export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
       <div
         className={styles.profileFavoriteItem}
         ref={favoriteItem1}
-        onClick={onItemPress}
+        onClick={() => onItemPress("/blog")}
       >
         <ProfileFavorite color="rgb(108, 139, 155)" label="Blog" />
       </div>
 
-      <Link href="/blog">
-        <a className={styles.profileFavoriteItem} ref={favoriteItem2}>
-          <ProfileFavorite color="rgb(108, 139, 155)" label="Skill" />
-        </a>
-      </Link>
+      <div
+        className={styles.profileFavoriteItem}
+        ref={favoriteItem2}
+        onClick={() => onItemPress("/skill")}
+      >
+        <ProfileFavorite color="rgb(108, 139, 155)" label="Skill" />
+      </div>
 
       <Link href="/blog">
         <a className={styles.profileFavoriteItem} ref={favoriteItem3}>
