@@ -23,6 +23,7 @@ export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
   onAnimatedProfileFavorite,
   onResetProfileFavorite,
   onToggleProfile,
+  onItemPress,
 }) => {
   return (
     <div
@@ -30,11 +31,13 @@ export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
       onMouseEnter={() => {}}
       onMouseLeave={() => {}}
     >
-      <Link href="/blog">
-        <a className={styles.profileFavoriteItem} ref={favoriteItem1}>
-          <ProfileFavorite color="rgb(108, 139, 155)" label="Blog" />
-        </a>
-      </Link>
+      <div
+        className={styles.profileFavoriteItem}
+        ref={favoriteItem1}
+        onClick={onItemPress}
+      >
+        <ProfileFavorite color="rgb(108, 139, 155)" label="Blog" />
+      </div>
 
       <Link href="/blog">
         <a className={styles.profileFavoriteItem} ref={favoriteItem2}>

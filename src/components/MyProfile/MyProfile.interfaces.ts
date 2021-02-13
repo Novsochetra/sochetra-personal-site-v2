@@ -10,10 +10,11 @@ export interface MyProfilePresentationProps {
   onAnimatedProfileFavorite: () => void;
   onResetProfileFavorite: () => void;
   onToggleProfile: (value: boolean) => void;
+  onItemPress: () => void;
 
   profileWrapperRef: Ref<HTMLDivElement>;
   imageRef: Ref<HTMLDivElement>;
-  favoriteItem1: Ref<HTMLAnchorElement>;
+  favoriteItem1: Ref<HTMLDivElement>;
   favoriteItem2: Ref<HTMLAnchorElement>;
   favoriteItem3: Ref<HTMLAnchorElement>;
   favoriteItem4: Ref<HTMLAnchorElement>;
