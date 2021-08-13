@@ -16,11 +16,11 @@ export interface MyProfilePresentationProps {
   imageRef: Ref<HTMLDivElement>;
   favoriteItem1: Ref<HTMLDivElement>;
   favoriteItem2: Ref<HTMLDivElement>;
-  favoriteItem3: Ref<HTMLAnchorElement>;
-  favoriteItem4: Ref<HTMLAnchorElement>;
-  favoriteItem5: Ref<HTMLAnchorElement>;
-  favoriteItem6: Ref<HTMLAnchorElement>;
-  favoriteItem7: Ref<HTMLAnchorElement>;
-  favoriteItem8: Ref<HTMLAnchorElement>;
+  favoriteItem3: Ref<HTMLDivElement>;
+  favoriteItem4: Ref<HTMLDivElement>;
+  favoriteItem5: Ref<HTMLDivElement>;
+  favoriteItem6: Ref<HTMLDivElement>;
+  favoriteItem7: Ref<HTMLDivElement>;
+  favoriteItem8: Ref<HTMLDivElement>;
   profileIntroRef: Ref<HTMLDivElement>;
 }

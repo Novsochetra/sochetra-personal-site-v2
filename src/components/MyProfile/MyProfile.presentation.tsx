@@ -47,11 +47,13 @@ export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
         <ProfileFavorite color="rgb(108, 139, 155)" label="Skill" />
       </div>
 
-      <Link href="/blog">
-        <a className={styles.profileFavoriteItem} ref={favoriteItem3}>
-          <ProfileFavorite color="rgb(108, 139, 155)" label="Favorite" />
-        </a>
-      </Link>
+      <div
+        className={styles.profileFavoriteItem}
+        ref={favoriteItem3}
+        onClick={() => onItemPress("/favorite")}
+      >
+        <ProfileFavorite color="rgb(108, 139, 155)" label="Favorite" />
+      </div>
 
       <Link href="/blog">
         <a className={styles.profileFavoriteItem} ref={favoriteItem4}>
@@ -59,21 +61,24 @@ export const MyProfilePresentation: React.FC<MyProfilePresentationProps> = ({
         </a>
       </Link>
 
-      <Link href="/blog">
+      <Link href="/achievement">
         <a className={styles.profileFavoriteItem} ref={favoriteItem5}>
           <ProfileFavorite color="rgb(108, 139, 155)" label="Achievement" />
         </a>
       </Link>
 
-      <Link href="/blog">
-        <a className={styles.profileFavoriteItem} ref={favoriteItem6}>
-          <ProfileFavorite color="rgb(108, 139, 155)" label="CV" />
-        </a>
-      </Link>
+      <div
+        className={styles.profileFavoriteItem}
+        // ref={favoriteItem6}
+        ref={favoriteItem6}
+        onClick={() => onItemPress("/cv")}
+      >
+        <ProfileFavorite color="rgb(108, 139, 155)" label="CV" />
+      </div>
 
-      <Link href="/blog">
+      <Link href="/about-me">
         <a className={styles.profileFavoriteItem} ref={favoriteItem7}>
-          <ProfileFavorite color="rgb(108, 139, 155)" label="Biography" />
+          <ProfileFavorite color="rgb(108, 139, 155)" label="About Me" />
         </a>
       </Link>
 

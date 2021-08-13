@@ -1,0 +1,48 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.bg-chocolate {
+  background-color: chocolate;
+}
+
+.bg-black-100 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bg-black-200 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-black-300 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg-flowerblue {
+  background-color: cornflowerblue;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.color-white {
+  color: white;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

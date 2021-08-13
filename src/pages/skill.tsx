@@ -2,28 +2,29 @@ import React, { useRef, useState } from "react";
 import Head from "next/head";
 import { Card, CardProps } from "../components/Card";
 import styles from "../styles/skill.module.css";
-import { MyProfile } from "../components/MyProfile";
 import { SkillCard } from "../components/SkillCard";
+import { Container } from "../components/Container";
+import { FadeSlideToRight } from "../components/FadeSlideToRight";
 
 function Skill({ skills }) {
   return (
-    <div className={styles.skillContainer}>
-      <Head>
-        <title>Skill</title>
-        <link rel="icon" href="./profile.png" />
-      </Head>
-      <main className={styles.skillMain}>
-        <div className={styles.skillWrapper}>
+    <Container>
+      <div className="flex align-center justify-center">
+        <Head>
+          <title>Skill</title>
+          <link rel="icon" href="./profile.png" />
+        </Head>
+        <main className={styles.skillMain}>
           {skills?.map((skill, i: number) => {
             return (
-              <div>
+              <FadeSlideToRight delayInSecond={0.25 * i}>
                 <SkillCard title={skill.title} thumbnail={skill.thumbnail} />
-              </div>
+              </FadeSlideToRight>
             );
           })}
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </Container>
   );
 }
 

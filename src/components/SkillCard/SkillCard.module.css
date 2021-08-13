@@ -1,12 +1,9 @@
 .skillCardContainer {
   width: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  margin: 12px;
   border-radius: 50%;
   padding: 12px;
-  margin: 0px 12px;
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 

@@ -1,0 +1,38 @@
+.hover-lightgray {
+  transition: background-color 0.5s;
+}
+
+.hover-lightgray:hover {
+  background-color: rgb(241, 241, 241);
+  transition: background-color 0.5s;
+}
+
+.hover-ocean {
+  transition: background-color 0.5s border-width 1s;
+}
+
+.hover-ocean:hover {
+  border-color: rgb(102, 144, 241);
+  border-width: 1px;
+  transition: background-color 0.5s, border-width 1s;
+}
+
+.scale-up-sm,
+.scale-up-md,
+.scale-up-lg {
+  transition: scale 0.5s;
+}
+
+.scale-up-sm:hover {
+  scale: 1.01;
+  transition: scale 0.5s;
+}
+
+.scale-up-md:hover {
+  scale: 1.05;
+  transition: scale 0.5s;
+}
+.scale-up-lg:hover {
+  scale: 1.1;
+  transition: scale 0.5s;
+}

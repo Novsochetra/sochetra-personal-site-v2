@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook  -s ./public -p 6006",
     "build-storybook": "build-storybook",
     "gen-component": "hygen component new --name",
     "init-hygen": "hygen init self"
@@ -26,6 +26,7 @@
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "hygen": "^6.0.4",
     "typescript": "^4.1.3"
   },

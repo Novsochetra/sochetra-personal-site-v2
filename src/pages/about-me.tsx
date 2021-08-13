@@ -1,23 +1,15 @@
 import React, { useRef, useState } from "react";
 import Head from "next/head";
-import { Card, CardProps } from "../components/Card";
-import styles from "../styles/index.module.css";
-import { MyProfile } from "../components/MyProfile";
-import { Container } from "../components/Container";
+import styles from "../styles/about-me.module.css";
 
-function Home({ posts }) {
+function AboutMe({ posts }) {
   return (
-    <Container>
-      {/* <div className={styles.container}> */}
+    <div className={styles.container}>
       <Head>
         <title>Sochetra NOV</title>
         <link rel="icon" href="./profile.png" />
       </Head>
-
-      <aside className={styles.leftSidebar}>
-        <MyProfile />
-      </aside>
-    </Container>
+    </div>
   );
 }
 
@@ -38,4 +30,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Home;
+export default AboutMe;

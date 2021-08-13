@@ -1,4 +1,4 @@
-.skillContainer {
+.container {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -10,14 +10,4 @@
   );
   justify-content: center;
   align-items: center;
-}
-
-.skillMain {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  /* overflow-y: scroll; */
-  padding: 16px;
 }
