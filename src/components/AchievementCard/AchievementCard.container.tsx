@@ -5,13 +5,13 @@ import { AchievementCardPresentation } from "./AchievementCard.presentation";
 export const AchievementCard: React.FC<AchievementCardProps> = ({
   title,
   description,
-  thumbnail,
+  thumbnails,
 }) => {
   return (
     <AchievementCardPresentation
       title={title}
       description={description}
-      thumbnail={thumbnail}
+      thumbnails={thumbnails}
     />
   );
 };

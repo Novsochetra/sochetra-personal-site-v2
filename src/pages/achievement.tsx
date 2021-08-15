@@ -36,7 +36,7 @@ function Achievement({ achievements }) {
                         <AchievementCard
                           title={d.title}
                           description={d.description}
-                          thumbnail={d.thumbnails?.[0]}
+                          thumbnails={d.thumbnails}
                         />
                       </FadeSlideToRight>
                     );

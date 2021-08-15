@@ -2,7 +2,7 @@
 export interface AchievementCardProps {
   title: string;
   description: string;
-  thumbnail?: string;
+  thumbnails?: string[];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
