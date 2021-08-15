@@ -2,52 +2,67 @@ import React from "react";
 import Head from "next/head";
 import { AchievementCard } from "../components/AchievementCard";
 import { FadeSlideToRight } from "../components/FadeSlideToRight";
-import styles from "../styles/achievement.module.css";
+import { SectionHeader } from "../components/SectionHeader";
+import { Container } from "../components/Container";
 
-function Achievement({ skills }) {
+const DELAY_DURATION = 0.25;
+
+function Achievement({ achievements }) {
   return (
-    <div className={`${styles.container} overflow-hidden scrollbar-none`}>
+    <Container>
       <Head>
-        <title>Skill</title>
+        <title>Achivement</title>
         <link rel="icon" href="./profile.png" />
       </Head>
-      <main className="flex align-center justify-center flex-row flex-wrap padding-lg">
-        <FadeSlideToRight delayInSecond={0}>
-          <AchievementCard
-            title="ខ្លាឃ្លោក"
-            description="I have create a simple ខ្លាឃ្លោក game by using javascript"
-          />
-        </FadeSlideToRight>
-        <FadeSlideToRight delayInSecond={0.25}>
-          <AchievementCard title="" description="" />
-        </FadeSlideToRight>
-
-        <FadeSlideToRight delayInSecond={0.25}>
-          <AchievementCard title="" description="" />
-        </FadeSlideToRight>
-        <FadeSlideToRight delayInSecond={0.25}>
-          <AchievementCard title="" description="" />
-        </FadeSlideToRight>
-        <FadeSlideToRight delayInSecond={0.25}>
-          <AchievementCard title="" description="" />
-        </FadeSlideToRight>
-      </main>
-    </div>
+      <div
+        className="flex justify-center overflow-scroll"
+        style={{ zIndex: 1000 }}
+      >
+        <main className="scrollbar-none" style={{ maxWidth: 1000 }}>
+          {achievements.map((achievement, index) => {
+            return (
+              <div
+                className="flex flex-col"
+                key={`achivement-section-row-${index}`}
+              >
+                <SectionHeader title={achievement.title} />
+                <div className="flex flex-row flex-wrap">
+                  {achievement.data?.map((d, i) => {
+                    return (
+                      <FadeSlideToRight
+                        delayInSecond={(i + index) * DELAY_DURATION}
+                        key={`achivement-section-${i}`}
+                      >
+                        <AchievementCard
+                          title={d.title}
+                          description={d.description}
+                          thumbnail={d.thumbnails?.[0]}
+                        />
+                      </FadeSlideToRight>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </main>
+      </div>
+    </Container>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/skill`);
+  const res = await fetch(`http://localhost:3000/api/achievement`);
   const data = await res.json();
   if (!data?.data) {
     return {
-      skills: [],
+      achievements: [],
     };
   }
 
   return {
     props: {
-      skills: data?.data,
+      achievements: data?.data ?? [],
     }, // will be passed to the page component as props
   };
 }

@@ -11,6 +11,9 @@ body {
 
 .flex {
   display: flex;
+}
+
+.flex-1 {
   flex: 1;
 }
 
@@ -59,4 +62,8 @@ body {
   .flex-row-lg {
     flex-direction: row !important;
   }
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
 }

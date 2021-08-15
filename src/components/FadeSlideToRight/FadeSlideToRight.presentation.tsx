@@ -7,7 +7,7 @@ export const FadeSlideToRightPresentation: React.FC<FadeSlideToRightPresentation
 }) => {
   return (
     <div
-      className="fade-slide-to-right"
+      className="fade-slide-to-right flex flex-1"
       style={{ animationDelay: `${delayInSecond}s` }}
     >
       {children}

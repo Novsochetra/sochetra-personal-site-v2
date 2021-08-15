@@ -5,17 +5,19 @@ import Image from "next/image";
 export const AchievementCardPresentation: React.FC<AchievementCardPresentationProps> = ({
   title,
   description,
+  thumbnail = "/main-profile.jpeg",
 }) => {
   return (
-    <div className="scale-up-md position-relative overflow-hidden width-300px height-300px border-radius-lg bg-flowerblue margin-lg">
+    <div className="flex width-300px scale-up-md flex flex-grow-1 position-relative overflow-hidden height-300px border-radius-lg bg-flowerblue margin-lg">
       <Image
-        src="/main-profile.jpeg"
-        className="object-cover"
+        placeholder="blur"
+        src={thumbnail}
+        className="object-contain"
         width="1000"
         height="1000"
       />
 
-      <div className="position-absolute bottom-0 bg-black-300 width-300px min-height-100px padding-sm">
+      <div className="position-absolute bottom-0 bg-black-300 width-full min-height-100px padding-sm">
         <div className="padding-sm">
           <h1 className="text-center color-white margin-unset">{title}</h1>
         </div>
