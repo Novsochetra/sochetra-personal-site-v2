@@ -147,13 +147,20 @@ export const ContainerPresentation: React.FC<ContainerPresentationProps> = ({
     }
     return () => {};
   }, [process.browser]);
+
+  useEffect(() => {
+    if (process.browser) {
+      var frame = document.getElementById("container");
+      frame.setAttribute(
+        "style",
+        `width: ${window.innerWidth}px;height:${window.innerHeight}px;`
+      );
+    }
+  }, [process.browser]);
+
   return (
-    <div className={styles.container}>
-      <div
-        id="particle-frame"
-        className={styles.particleFrame}
-        style={{ width: 400, height: 400 }}
-      ></div>
+    <div className={styles.container} id="container">
+      <div id="particle-frame" className={styles.particleFrame}></div>
       {children}
     </div>
   );

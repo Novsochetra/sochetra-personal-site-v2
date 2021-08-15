@@ -2,7 +2,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 100vh;
+  overflow: scroll;
   background: radial-gradient(
     circle at -4% -12.9%,
     rgb(74, 98, 110) 0.3%,

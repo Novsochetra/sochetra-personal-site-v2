@@ -37,10 +37,20 @@ export const MyProfile: React.FC<MyProfileProps> = () => {
   };
 
   const onAnimatedProfileFavorite = () => {
-    const translateX = window.screen.width < 730 ? 160 : 280;
-    const translateY = window.screen.width < 730 ? 160 : 280;
+    // const translateX = window.screen.width < 730 ? 160 : 280;
+    // const translateY = window.screen.width < 730 ? 160 : 280;
+    let translateX = 0;
+    let translateY = 0;
 
-    animateProfileIntro("400px", 0);
+    if (window.innerWidth < 430) {
+      translateX = translateY = 145;
+    } else if (window.innerWidth < 730) {
+      translateX = translateY = 160;
+    } else {
+      translateX = translateY = 280;
+    }
+
+    animateProfileIntro(`${translateY}px`, 0);
 
     const C2 = Math.sqrt(Math.pow(translateX, 2) + Math.pow(translateY, 2)) / 2;
     profileWrapperRef.current.style.padding = "12px";
