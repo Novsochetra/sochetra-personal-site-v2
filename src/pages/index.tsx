@@ -22,20 +22,30 @@ function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/api/`);
-  const data = await res.json();
-  if (!data?.data) {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/`);
+    const data = await res.json();
+    if (!data?.data) {
+      return {
+        props: {
+          posts: data?.data,
+        }, // will be passed to the page component as props
+      };
+    }
+
+    console.log("post: ", data);
     return {
-      posts: [],
+      props: {
+        posts: data?.data,
+      }, // will be passed to the page component as props
+    };
+  } catch (error) {
+    return {
+      props: {
+        posts: [],
+      }, // will be passed to the page component as props
     };
   }
-
-  console.log("post: ", data);
-  return {
-    props: {
-      posts: data?.data,
-    }, // will be passed to the page component as props
-  };
 }
 
 export default Home;

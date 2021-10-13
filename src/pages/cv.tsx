@@ -74,20 +74,28 @@ function Cv({ skills }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/api/skill`);
-  const data = await res.json();
-  if (!data?.data) {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/skill`);
+    const data = await res.json();
+    if (!data?.data) {
+      return {
+        skills: [],
+      };
+    }
+
+    console.log("skill: ", data);
     return {
-      skills: [],
+      props: {
+        skills: data?.data,
+      }, // will be passed to the page component as props
+    };
+  } catch (error) {
+    return {
+      props: {
+        skills: [],
+      }, // will be passed to the page component as props
     };
   }
-
-  console.log("skill: ", data);
-  return {
-    props: {
-      skills: data?.data,
-    }, // will be passed to the page component as props
-  };
 }
 
 export default Cv;

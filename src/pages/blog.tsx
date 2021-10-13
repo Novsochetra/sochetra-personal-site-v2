@@ -42,19 +42,27 @@ function Blog({ blogs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/api/blog`);
-  const data = await res.json();
-  if (!data?.data) {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/blog`);
+    const data = await res.json();
+    if (!data?.data) {
+      return {
+        blogs: [],
+      };
+    }
+
     return {
-      blogs: [],
+      props: {
+        blogs: data?.data ?? [],
+      }, // will be passed to the page component as props
+    };
+  } catch (error) {
+    return {
+      props: {
+        blogs: [],
+      }, // will be passed to the page component as props
     };
   }
-
-  return {
-    props: {
-      blogs: data?.data ?? [],
-    }, // will be passed to the page component as props
-  };
 }
 
 export default Blog;

@@ -52,19 +52,29 @@ function Achievement({ achievements }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/api/achievement`);
-  const data = await res.json();
-  if (!data?.data) {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/achievement`);
+    const data = await res.json();
+    if (!data?.data) {
+      return {
+        props: {
+          achievements: [],
+        },
+      };
+    }
+
     return {
-      achievements: [],
+      props: {
+        achievements: data?.data ?? [],
+      }, // will be passed to the page component as props
+    };
+  } catch (error) {
+    return {
+      props: {
+        achievements: [],
+      },
     };
   }
-
-  return {
-    props: {
-      achievements: data?.data ?? [],
-    }, // will be passed to the page component as props
-  };
 }
 
 export default Achievement;
