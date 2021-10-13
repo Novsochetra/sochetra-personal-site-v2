@@ -1,48 +1,58 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Head from "next/head";
-import { Card, CardProps } from "../components/Card";
-import styles from "../styles/blog.module.css";
-import { MyProfile } from "../components/MyProfile";
+import { AchievementCard } from "../components/AchievementCard";
+import { FadeSlideToRight } from "../components/FadeSlideToRight";
+import { SectionHeader } from "../components/SectionHeader";
+import { Container } from "../components/Container";
 
-function Blog({ posts }) {
+const DELAY_DURATION = 0.25;
+
+function Blog({ blogs }) {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <title>Blog</title>
         <link rel="icon" href="./profile.png" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.postWrapper}>
-          {posts?.map((post: CardProps, i: number) => {
-            return (
-              <Card
-                key={`${post.title} ${i}`}
-                title="The WET Codebase"
-                description="In this talk, my aim was to show why strict adherence to writing code that is free of duplication inevitably leads to software we can’t understand. While you could watch this talk by yourself, I tried to make it a good starting point for a team discussion. If you drop it in Slack, tell me what your teammates thought!"
-                thumbnail={post.thumbnail}
-                publishedAt="2days ago"
-              />
-            );
-          })}
-        </div>
-      </main>
-    </div>
+      <div
+        className="flex justify-center overflow-scroll"
+        style={{ zIndex: 1000 }}
+      >
+        <main className="scrollbar-none" style={{ maxWidth: 1000 }}>
+          <div className="flex flex-row flex-wrap">
+            {blogs?.map((d, i) => {
+              return (
+                <FadeSlideToRight
+                  delayInSecond={i * DELAY_DURATION}
+                  key={`achivement-section-${i}`}
+                >
+                  <AchievementCard
+                    title={d.title}
+                    description={d.description}
+                    thumbnails={d.thumbnails}
+                  />
+                </FadeSlideToRight>
+              );
+            })}
+          </div>
+        </main>
+      </div>
+    </Container>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/`);
+  const res = await fetch(`http://localhost:3000/api/blog`);
   const data = await res.json();
   if (!data?.data) {
     return {
-      posts: [],
+      blogs: [],
     };
   }
 
-  console.log("post: ", data);
   return {
     props: {
-      posts: data?.data,
+      blogs: data?.data ?? [],
     }, // will be passed to the page component as props
   };
 }

@@ -30,6 +30,7 @@ export const AchievementCardPresentation: React.FC<AchievementCardPresentationPr
           {thumbnails.slice(0, 4).map((thumbnail) => {
             return (
               <div
+                key={thumbnail}
                 style={{
                   display: "flex",
                   justifyContent: "center",
