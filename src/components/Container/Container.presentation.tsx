@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect } from "react";
 import { ContainerPresentationProps } from "./Container.interfaces";
 import styles from "./Container.module.css";

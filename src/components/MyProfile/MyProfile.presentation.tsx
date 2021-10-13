@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import { ProfileFavorite } from "../ProfileFavorite";
 import Image from "next/image";

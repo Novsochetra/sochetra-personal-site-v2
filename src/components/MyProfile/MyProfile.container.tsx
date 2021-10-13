@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { profile } from "console";
 import Router from "next/router";
 import React, { useRef, useState } from "react";
