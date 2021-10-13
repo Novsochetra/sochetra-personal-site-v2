@@ -42,7 +42,7 @@ function Blog({ blogs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/blog`);
+  const res = await fetch(`${process.env.API_URL}/api/blog`);
   const data = await res.json();
   if (!data?.data) {
     return {

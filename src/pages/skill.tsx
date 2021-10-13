@@ -29,7 +29,7 @@ function Skill({ skills }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/skill`);
+  const res = await fetch(`${process.env.API_URL}/api/skill`);
   const data = await res.json();
   if (!data?.data) {
     return {

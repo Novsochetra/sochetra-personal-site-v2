@@ -52,7 +52,7 @@ function Achievement({ achievements }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/achievement`);
+  const res = await fetch(`${process.env.API_URL}/api/achievement`);
   const data = await res.json();
   if (!data?.data) {
     return {

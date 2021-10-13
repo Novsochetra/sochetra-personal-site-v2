@@ -14,7 +14,7 @@ function AboutMe({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/`);
+  const res = await fetch(`${process.env.API_URL}/api/`);
   const data = await res.json();
   if (!data?.data) {
     return {
